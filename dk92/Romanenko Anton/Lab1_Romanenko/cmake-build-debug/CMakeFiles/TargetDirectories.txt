@@ -1,0 +1,3 @@
+D:/C-Project/Lab1_Romanenko/cmake-build-debug/CMakeFiles/Lab1_Romanenko.dir
+D:/C-Project/Lab1_Romanenko/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/C-Project/Lab1_Romanenko/cmake-build-debug/CMakeFiles/rebuild_cache.dir
