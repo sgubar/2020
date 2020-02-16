@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#includ <hidder.h>
+#include <hidder.h>
 int main()
 {
     int a, b, c, d = 0;
