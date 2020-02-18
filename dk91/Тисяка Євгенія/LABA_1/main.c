@@ -4,10 +4,10 @@
 #include"ccc.c"
 int main ()
 {
-  float A=1;
-  float B=20;
-  float C=100;
-  float D=10;
+  float A;
+  float B;
+  float C;
+  float D;
   printf("{A, B, C, D}-Z, A>=0\n");
   scanf("%f %f %f %f", &A, &B, &C, &D);
   printf("%f %f %f %f \n", A, B, C, D);
