@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <hidder.h>
 
-double step(int base, int exp);
-double sum(int finish, int start);
-double fac(int base);
 int main()
 {
     int a, b, c, d = 0;
