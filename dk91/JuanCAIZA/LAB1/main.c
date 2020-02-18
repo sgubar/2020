@@ -39,8 +39,8 @@ double step(int base, int exp)
 }
 double fac(int in)
 {   int out = 1;
-if (base>=0){
-    for(int i = 1; i<=base; i++)
+if (in>=0){
+    for(int i = 1; i<=in; i++)
     {
       out*=i;
     }
