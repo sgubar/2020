@@ -1,7 +1,6 @@
 #include "hyder.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 double main(int argc, char const *argv[])
 {
