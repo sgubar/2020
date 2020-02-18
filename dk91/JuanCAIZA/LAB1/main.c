@@ -43,7 +43,7 @@ if (base>=0){
     for(int i = 1; i<=base; i++)
     {
       out*=i;
-    }printf(" fac%d", );
+    }
     return a;
            }else return 0;
 }
@@ -55,9 +55,7 @@ double sum(int finish, int start)
     for(; start <=finish; start++)
         {
             a = a + fac(start);
-            printf(" sum%d", a);
         }
-        printf(" sume%d", a);
         return a;
 }
   
