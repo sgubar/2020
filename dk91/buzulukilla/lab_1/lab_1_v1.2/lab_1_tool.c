@@ -5,7 +5,7 @@ int devisible_test(int A,int B,int C){
   int Result_DEVIS=A*C-B;
     if (Result_DEVIS<0)
     {
-      int Result_DEVIS=Result_DEVIS*(-1);
+ ?     int Result_DEVIS=Result_DEVIS*(-1);
       }
       return Result_DEVIS;
 }
@@ -22,13 +22,13 @@ int devisible_test(int A,int B,int C){
     
     int division_test(int Result_DEVIS, int Result_EXP)
     { 
-      return Result_DEVIS/Result_EXP;
+ ?? always int value     return Result_DEVIS/Result_EXP;
      }
      
 	 
 	 
-	 int D=0;
-     int Result_EXP2=0;
+?	 int D=0;
+?     int Result_EXP2=0;
      
 	 
 	 
@@ -43,7 +43,7 @@ int devisible_test(int A,int B,int C){
       {
       Exp1=Exp1*2;
         }
-        int Result_EXP2=Result_EXP2+Exp1;
+?        int Result_EXP2=Result_EXP2+Exp1;
       }
       
       return Result_EXP2;

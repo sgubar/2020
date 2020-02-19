@@ -8,6 +8,7 @@ int main(int argc, char** argv) {
 	A=10;
 	B=10;
 	C=2;
+?? DEV_FIN is not initiated before used
 												printf("the result is %f %f %f\n",DEV_FIN,SUMM,RESULT);
 	devis=devisible_test(A,B,C);
 	
