@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1581931457 source:d:\lab_rab\lab_rab_1\lab_rab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bib.h"
+
+1581530541 d:\lab_rab\lab_rab_1\lab_rab1\bib.h
+	<stdio.h>
+
+1581534504 source:d:\lab_rab\lab_rab_1\lab_rab1\bib.c
+	"bib.h"
+
