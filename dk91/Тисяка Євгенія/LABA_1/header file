@@ -1,9 +1,0 @@
-#ifndef HHH_H_INCLUDED
-#define HHH_H_INCLUDED
-
-float  d(float A, float B, float C);
-float s(float A,float B, float C, float D);
-float q(float d, float s);
-
-
-#endif // HHH_H_INCLUDED
