@@ -18,11 +18,11 @@ return  a;
 }
 
 
-float sum(int x, int y){
+float sum(int C, int A){
     float sum=0;
 
-    for(int i=0;i<=x; i++){
-        sum+=factorial(y+i);
+    for(int D=0;D<=C; D++){
+        sum+=factorial(A+D);
     }
 return sum;
 }
