@@ -19,9 +19,18 @@ int main()
 
     if(B==0){
         printf("ERROR: Cannot be divided by zero");
+    }else if(C<0){
+        printf("ERROR: Enter non-negative C");
     }else{
         Q = A*sqrt(B+C)/B+sum(C, A);
-       printf("%.3f ", Q);
+
+       //printf("sqrt = %f\n", sqrt(B+C));
+
+       //printf("factorial= %d\n", factorial(A));
+
+       //printf("sum= %.2f\n", sum(C, A));
+
+       printf("Q = %.2f\n ", Q);
        }
     return 0;
 }
