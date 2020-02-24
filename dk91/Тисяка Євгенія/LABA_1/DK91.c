@@ -10,7 +10,7 @@ float  d(float A, float B, float C)
     {
 
      printf("error:you cannot divide by zero");
-
+      return 0;
   }
 
 
