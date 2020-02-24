@@ -1,23 +1,23 @@
-float power2(float a, float b)
+float power2(float a)
 {
    int x=1;
    int i;
    int j;
-   int step;
-    if((a+b)>=0);
-    {
-       step=a+b;
 
-      for(j=0; j<step; j++)
+    if(a>=0);
+    {
+
+
+      for(j=0; j<a; j++)
       {
         x=x*2;
       }
      return x;
     }
-    if(a+b<0)
+    if(a<0)
     {
-       step=-1*(a+b);
-      for(j=0; j<step; j++)
+       a=-1*a;
+      for(j=0; j<a; j++)
       {
         x=x*2;
       }
@@ -47,13 +47,13 @@ float s(float A,float B, float C, float D)
 float s=0;
 int i;
 int j;
-
+float step=D+i;
 float x;
   for(i=0; i<=A; i++)
   {
 
     x=1;
-    x = power2(i, D);
+    x = power2(step);
     s=s+x;
   }
   return s;
