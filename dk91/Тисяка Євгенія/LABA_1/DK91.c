@@ -47,11 +47,11 @@ float s(float A,float B, float C, float D)
 float s=0;
 int i;
 int j;
-float step=D+i;
+float step;
 float x;
   for(i=0; i<=A; i++)
   {
-
+    step=D+i;
     x=1;
     x = power2(step);
     s=s+x;
