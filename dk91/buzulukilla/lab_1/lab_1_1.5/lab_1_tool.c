@@ -31,7 +31,7 @@ int devisible_test(int A,int B,int C){
 	{	int result_pow_2=0;
 		for (int a=0;a!=pow;a++)
 		{
-			int result_pow_1=2*a+result_pow_2;
+			result_pow_2=2*a+result_pow_2;
 		}
 		return result_pow_2;
 	}
