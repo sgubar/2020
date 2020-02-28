@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "functions.h"
+#include "hidder.h"
 
 double power(int base, int exp)
 {
