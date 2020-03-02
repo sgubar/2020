@@ -4,9 +4,20 @@
 int main()
 {
     int a, b, c, d = 0;
-    scanf("%d %d %d", &a, &b , &c);
+        printf("a=");
+        scanf("%d", &a);
+    do{
+        printf("b=");
+        scanf("%d", &b);
+    }while(b<=0);
+    do{
+        printf("c=");
+        scanf("%d", &c);
+    }while(c<=0);
     double creck;
-    creck = ((a * b)/(b + power(c, 2)))* sum(b, d) ;
+    int f = a*b;
+    int g = b + power(c, 2);
+    creck = (f/g)+sum(b, d) ;
     printf(" creck%f", creck);
     return 0;
 }
