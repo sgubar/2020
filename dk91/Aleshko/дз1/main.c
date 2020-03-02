@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "hidder.h"
 int main()
 {
     int matrix[3][5];
