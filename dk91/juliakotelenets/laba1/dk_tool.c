@@ -19,16 +19,7 @@ void Factorial(int A, int *factorial) //занесення факторіалу 
 void Modul(int A, int B, int *ModuledZnamenatel, int *Znamenatel)  //ф-ції знаменник та модуль знаменника
 {
 
-    *Znamenatel = 2 * A + B; 
-
-    if(*Znamenatel == 0)       
-    {
-        printf("Error:Znamenatel=0\n");
-    }
-    else                      
-    {
-        printf("Znamenatel:%i\n", *Znamenatel);
-    }
+    *Znamenatel = 2 * A + B;
 
     if(0>*Znamenatel)   
     {
@@ -38,15 +29,7 @@ void Modul(int A, int B, int *ModuledZnamenatel, int *Znamenatel)  //ф-ції �
     {
         *ModuledZnamenatel = *Znamenatel;
     }
-
-    if(*Znamenatel == 0)     
-    {
-        printf("restart and enter another values\n");
-    }
-    else          
-    {
-        printf("Modul Znamenatel:%i\n", *ModuledZnamenatel);
-    }
+      printf("Modul Znamenatel:%i\n", *ModuledZnamenatel);
 }
 
 void Result(int factorial, int *Znamenatel, int *ModuledZnamenatel, float *result) //функція результату
