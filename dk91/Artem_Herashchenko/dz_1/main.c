@@ -51,8 +51,15 @@ int main()
     }
 
     matrixsum(matrix_1, matrix_2, row_1, col_1);
-    vivodmatrix(matrix_1, row_1, col_1);
 
+    for(int i=0; i < row_1; i++ ){                                         //ВЫВОД МАТРИЦЫ
+        for(int j=0; j < col_1; j++){
+
+
+            printf("%d ", *(matrix_1 + i*col_1 + j));
+        }
+        printf("\n");
+    }
     }
     return 0;
 }
