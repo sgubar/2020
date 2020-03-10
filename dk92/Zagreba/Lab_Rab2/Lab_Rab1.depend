@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1582536447 source:d:\lab_rab\lab_rab_1\lab_rab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bib.h"
+
+1582536253 d:\lab_rab\lab_rab_1\lab_rab1\bib.h
+	<stdio.h>
+
+1582536610 source:d:\lab_rab\lab_rab_1\lab_rab1\bib.c
+	"bib.h"
+
+1583077625 source:d:\lab_rab\lab_rab_1_\lab_rab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bib.h"
+
+1583077646 d:\lab_rab\lab_rab_1_\lab_rab1\bib.h
+	<stdio.h>
+
+1583077613 source:d:\lab_rab\lab_rab_1_\lab_rab1\bib.c
+	"bib.h"
+
+1583690846 source:d:\lab_rab\lab_rab_2\lab_rab1\bib.c
+	"bib.h"
+
+1583690801 d:\lab_rab\lab_rab_2\lab_rab1\bib.h
+	<stdio.h>
+
+1583691654 source:d:\lab_rab\lab_rab_2\lab_rab1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bib.h"
+
