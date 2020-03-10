@@ -1,9 +1,10 @@
 #include "tool.h"
 #include <stdio.h>
 
-int stepen(int chislo) {
+int stepen(int chislo)
+{
     int result;
-    result = chislo * chislo;
+        result = chislo * chislo;
     return result;
 }
 
@@ -26,8 +27,10 @@ int factorial(int chislo)
 
 int suma(int chislo)
 {
-    int b;
+    int b = 0;
     int result = 0;
+    int c = 0;
+    int znamenatel = b + stepen(c);
 
     if (chislo < 0)
         {
@@ -39,8 +42,16 @@ int suma(int chislo)
         {
             result = result + factorial(b);
         }
+    
+   
+    if ( znamenatel == 0)
+        {
+            printf("You have a 0 in your znamenalel\n");
+            return 0;
+        }
     return result;
-}
+    }
+
 
 int formula(int a, int b, int c)
 {
@@ -50,3 +61,4 @@ int formula(int a, int b, int c)
     return result;
 
 }
+
