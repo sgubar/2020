@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+void displayString(char str[]);
+
+int main()
+{
+    char str[50];
+    printf ("Enter your text: ");
+    fgets(str, sizeof(str), stdin);
+    displayString(str);
+    return 0;
+}
+void displayString(char str[])
+{
+int counter = 0;
+for (int i = 0; i <= strlen(str); i++) {
+    if (str[i] == ' ') {
+        counter++;
+    }
+}
+printf("Number of words in text: %d\n", counter+1);
+}
