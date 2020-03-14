@@ -4,7 +4,7 @@ void probel(char str[]);
 
 int main()
 {
-    char str[50];
+    char str[250];
     printf ("Enter your text: ");
     fgets(str, sizeof(str), stdin);
     probel(str);
