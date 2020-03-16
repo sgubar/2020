@@ -1,0 +1,28 @@
+unsorted array
+iterations: 0
+0: 719
+1: 8442
+2: 1795
+3: 587
+4: 5848
+buble sorted array
+iterations: 16
+0: 587
+1: 719
+2: 1795
+3: 5848
+4: 8442
+selection sorted array
+iterations: 10
+0: 587
+1: 719
+2: 1795
+3: 5848
+4: 8442
+insertion sorted array
+iterations: 5
+0: 587
+1: 719
+2: 1795
+3: 5848
+4: 8442
