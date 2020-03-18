@@ -60,6 +60,9 @@ int main()
         }
         printf("\n");
     }
+    free(matrix_1);
+    free(matrix_2);
     }
+
     return 0;
 }
