@@ -1,0 +1,32 @@
+1========================================================
+Time of fill 20000 array: 0.1120000000
+Time of save 20000 array: 0.0290000000
+Time of load 20000 array: 0.0780000000
+
+Time of insertionSort 20000 array: 1.9050000000
+Time of selectionSort 20000 array: 3.2750000000
+Time of bubbleSort 20000 array: 5.7300000000
+2========================================================
+Time of fill 20000 array: 0.1040000000
+Time of save 20000 array: 0.0150000000
+Time of load 20000 array: 0.0790000000
+
+Time of insertionSort 20000 array: 1.7150000000
+Time of selectionSort 20000 array: 3.2370000000
+Time of bubbleSort 20000 array: 6.4300000000
+3========================================================
+Time of fill 20000 array: 0.1130000000
+Time of save 20000 array: 0.0300000000
+Time of load 20000 array: 0.0450000000
+
+Time of insertionSort 20000 array: 1.8350000000
+Time of selectionSort 20000 array: 3.2740000000
+Time of bubbleSort 20000 array: 6.2340000000
+average==================================================
+Time of fill 20000 array: 0.1096
+Time of save 20000 array: 0.0246
+Time of load 20000 array: 0.0673
+
+Time of insertionSort 20000 array: 1.8183
+Time of selectionSort 20000 array: 3.262
+Time of bubbleSort 20000 array:    6.13133
