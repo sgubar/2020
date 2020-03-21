@@ -89,7 +89,6 @@ if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
     else
         {
             printf("Wrong! Select type of sort again!\n");
-            //return type_of_sort;
         }
 }
    void inPut( long length, char buffer[]){
