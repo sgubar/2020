@@ -112,7 +112,6 @@ if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
         printf("File opened\n");
         fseek (txt_file, 0, SEEK_END);
     int length = ftell(txt_file);
-	fclose(txt_file);
     printf("Length of file: %i elements\n" , length);
     FILE *txt_file1 = fopen("Text.txt" , "rt");
 	char *buffer = (char*)malloc(sizeof(char) * length );
