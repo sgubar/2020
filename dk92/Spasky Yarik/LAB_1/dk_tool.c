@@ -30,12 +30,8 @@ int dk_factorial(int num_A){
 double dk_suma(double result_1, float num_B){
 	 double result_2;
 	      result_2 = result_1 + num_B;
-     if ( result_2 == 0)
-	 {
-     	printf("Invalid");
-     	return -1;
-	 }
-	 else if(result_2 < 0)
+    
+	  if(result_2 < 0)
 	 	return result_2 *= -1;
 	 else
 	 	return result_2;
