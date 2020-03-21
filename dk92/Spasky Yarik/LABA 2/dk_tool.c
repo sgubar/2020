@@ -106,11 +106,8 @@ if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
    }
   void Open(){
     FILE *txt_file = fopen("Text.txt", "rt");
-    if(txt_file == NULL)
-   {
-        printf("No such file found");
-	return -1;
-    }
+    if(txt_file == NULL)   
+        printf("No such file found");    
     else{
         printf("File opened\n");
         fseek (txt_file, 0, SEEK_END);
