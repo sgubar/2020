@@ -29,17 +29,17 @@ int main()
         printf("Invalid value.");
         return -1;
     }
+   if (2 * num_A + num_B == 0)
+   {
+      printf("ERROR");
+      return -1;
+      
+   }
+   else {
     printf("A=%f, B=%f\n", num_A,num_B);
-
-    float first_step = dk_factorial(num_A);
-    float second_step = dk_mnogennya(num_A);
-    float third_step = dk_suma(second_step, num_B);
-    float forth_step = dk_dilennya(first_step, third_step);
-
-
-
     printf("Q=%f\n",dk_dilennya(dk_factorial(num_A), dk_suma(dk_mnogennya(num_A), num_B)));
     return 0;
+   }
 }
 
 
