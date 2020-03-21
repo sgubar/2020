@@ -109,8 +109,7 @@ if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
     if(txt_file == NULL)
    {
         printf("No such file found");
-
-
+	return -1;
     }
     else{
         printf("File opened\n");
