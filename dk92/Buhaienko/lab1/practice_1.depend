@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1583830470 source:c:\users\user\desktop\Новая папка (2)\practice_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"CustomMath.h"
+	"Validate.h"
+
+1583145531 c:\users\user\desktop\Новая папка (2)\practice_1\custommath.h
+	"CustomMath.c"
+
+1583145781 c:\users\user\desktop\Новая папка (2)\practice_1\custommath.c
+	<stdio.h>
+	<stdlib.h>
+
+1583830292 c:\users\user\desktop\Новая папка (2)\practice_1\validate.h
+
+1583830747 source:c:\users\user\desktop\Новая папка (2)\practice_1\validate.c
+	<stdio.h>
+	<stdlib.h>
+
