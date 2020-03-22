@@ -5,7 +5,7 @@ int *fillArray(int size)
     int *array = (int *)calloc(size, sizeof(int));
     for (int i = 0; i < size; i++)
     {
-        array[i] = rand();
+         array[i] = rand()%10000;
     }
     return array;
 }
