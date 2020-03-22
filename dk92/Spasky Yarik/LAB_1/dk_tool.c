@@ -7,6 +7,8 @@
 int dk_factorial(int num_A){
     if(num_A < 1)
     	return -1;
+    	else if (num_A<0||num_A>10)
+    	exit(-1);
 	else
 	{
 		int result = 1;
@@ -30,8 +32,11 @@ int dk_factorial(int num_A){
 double dk_suma(double result_1, float num_B){
 	 double result_2;
 	      result_2 = result_1 + num_B;
-    
-	  if(result_2 < 0)
+	      if ( num_B < -9999 || num_B > 9999)
+           exit(-1);
+	      else if (result_2 == 0)
+            exit(-1);
+        else if(result_2 < 0)
 	 	return result_2 *= -1;
 	 else
 	 	return result_2;
@@ -45,5 +50,4 @@ double dk_suma(double result_1, float num_B){
   	return result_3;
 
  }
-
 
