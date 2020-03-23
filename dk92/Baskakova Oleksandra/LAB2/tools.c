@@ -30,7 +30,7 @@ void fprintResult(FILE *file, char label[], SortResult result, int size)
 
 void swap(int *arr, int firtsIndex, int secondIndex)
 {
-    int tmp = arr[firtsIndex];
-    arr[firtsIndex] = arr[secondIndex];
+    int tmp = arr[firstIndex];
+    arr[firstIndex] = arr[secondIndex];
     arr[secondIndex] = tmp;
 }
