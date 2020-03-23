@@ -4,15 +4,15 @@ SortResult selectionSort(int *array, int size)
 {
     int *arr = copyArray(array, size);
     time_t t0 = time(0);
-selection (arr, size);
+    selection(arr, size);
     time_t t1 = time(0);
     SortResult result;
     result.ellapsedTime = difftime(t1, t0);
     result.array = arr;
     return result;
 }
-    void selection (int *array, int size)
-    {
+void selection(int *array, int size)
+{
     for (int i = 0; i < size; i++)
     {
         int minIndx = i;
@@ -29,4 +29,4 @@ selection (arr, size);
             swap(array, i, minIndx);
         }
     }
-    }
+}
