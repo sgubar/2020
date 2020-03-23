@@ -28,7 +28,7 @@ void fprintResult(FILE *file, char label[], SortResult result, int size)
     }
 }
 
-void swap(int *arr, int firtsIndex, int secondIndex)
+void swap(int *arr, int firstIndex, int secondIndex)
 {
     int tmp = arr[firstIndex];
     arr[firstIndex] = arr[secondIndex];
