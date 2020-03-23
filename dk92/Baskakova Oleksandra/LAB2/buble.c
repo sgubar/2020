@@ -3,10 +3,8 @@
 SortResult bubleSort(int *array, int size)
 {
     int *arr = copyArray(array, size);
-    int swaps = size;
-    int iterations = 0;
+    int swaps;
     time_t t0 = time(0);
-
     do
     {
         swaps = 0;
@@ -17,13 +15,13 @@ SortResult bubleSort(int *array, int size)
                 swap(arr, i, i + 1);
                 swaps++;
             }
-            iterations++;
         }
     } while (swaps != 0);
+
     time_t t1 = time(0);
 
     SortResult result;
-    result.ellapsedTime = difftime(t1,t0);
+    result.ellapsedTime = difftime(t1, t0);
     result.array = arr;
     return result;
 }
