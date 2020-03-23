@@ -7,15 +7,9 @@
 #include "buble.h"
 #include "sortResult.c"
 #include "tools.h"
-
-int *copyArray(int *array, int size);
-void fprintResult(FILE *file, char label[], SortResult result, int size);
-void swap(int *arr, int firtsIndex, int secondIndex);
-
 int main(int argc, char const *argv[])
 {
     int size;
-    //replace with smart validation
     do
     {
         printf("enter size of array \n");
