@@ -3,7 +3,6 @@
 SortResult selectionSort(int *array, int size)
 {
     int *arr = copyArray(array, size);
-    int iterations = 0;
     time_t t0 = time(0);
     for (int i = 0; i < size; i++)
     {
@@ -14,7 +13,6 @@ SortResult selectionSort(int *array, int size)
             {
                 minIndx = j;
             }
-            iterations++;
         }
 
         if (minIndx != i)
