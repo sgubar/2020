@@ -4,3 +4,4 @@
 
 
 SortResult selectionSort(int *array, int size);
+void selection(int *array, int size);
