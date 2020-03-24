@@ -1,24 +1,31 @@
 #include "one.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 
 //BUBBLE
-void bubbleSort(char a[], int n)
+void bubbleSort(char arr[], int n)
 {
     int j = 0;
 for(int i = 0 ; i < n - 1; i++) {
    // сравнение  двух соседних элементов
    for(j = 0 ; j < n - i - 1 ; j++) {
-       if(a[j] > a[j+1]) {
+       if(arr[j] > arr[j+1]) {
           
-          char tmp = a[j];
-          a[j] = a[j+1] ;
-          a[j+1] = tmp;
+          char tmp = arr[j];
+          arr[j] = arr[j+1] ;
+          arr[j+1] = tmp;
        }
     }
 }
-       fprintResult(a, n);
+       fprintResult(arr, n);
 }
+
+
+
+
+
+
+
 // INSERTION
 void insertionSort(char arr[], int n)
     {
@@ -33,12 +40,11 @@ void insertionSort(char arr[], int n)
           while (j >= 0 && arr[j] > key) {
               arr[j + 1] = arr[j];
               j = j - 1;
-          }
+           }
           arr[j + 1] = key;
       }
          fprintResult(arr, n);
     }
-
 
 // SELECTION
 void selectionSort(char arr[], int n)
@@ -64,16 +70,14 @@ void selectionSort(char arr[], int n)
     fprintResult(arr, n);
 }
 
-void fprintResult(char label[],  int size) {
-     
-    FILE *file;
-    file = fopen("Rezult.txt", "w");
-
+void fprintResult(char array[],  int size) {
+    FILE* file = fopen("/Users/marinakshanovskaa/Desktop/New/laba 2/result.txt","w");
+    fprintf(file,"Result:\n");
     for (int i = 0; i < size; i++)
     {
-        fprintf(file, "%c\n", label[i]);
+        fprintf(file, "%c\n", array[i]);
     }
-    fclose (file);
+    fclose(file);
 }
 
 //перестановка обьектов
