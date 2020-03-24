@@ -4,3 +4,5 @@
 
 
 SortResult bubleSort(int *array, int size);
+void buble(int *array, int size);
+
