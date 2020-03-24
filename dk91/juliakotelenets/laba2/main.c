@@ -16,15 +16,15 @@ int main(void)
         printf("File opened\n");
 
     fseek (txt_file, 0, SEEK_END);
-    int length = ftell(txt_file);
+    int size = ftell(txt_file);
 	fclose(txt_file);
-    printf("Length of file: %i elements\n" , length);
+    printf("Length of file: %i elements\n" , size);
 
     FILE *txt_file1 = fopen("Text.txt" , "rt");
 
 
-	char *buffer = (char*)malloc(sizeof(char) * length );
-    fgets(buffer, length, txt_file1);
+	char *arr = (char*)malloc(sizeof(char) * size );
+    fgets(arr, size, txt_file1);
     fclose(txt_file1);
     getchar();
 
@@ -39,15 +39,15 @@ int main(void)
          switch(type_of_sort)
         {
             case 1:
-            BubbleSort ( buffer , length);
+            BubbleSort ( arr , size);
             break;
 
             case 2:
-            InsertionSort ( buffer , length);
+            InsertionSort ( arr , size);
             break;
 
             case 3:
-            SelectionSort(length , buffer);
+            SelectionSort(size , arr);
             break;
         }
 
@@ -71,14 +71,15 @@ int main(void)
 
     FILE *file = fopen("Tekst_sort.txt","wt");
 	int i = 0;
-	while(i<length)
+	while(i<size)
 	{
-		putc((int)buffer[i],file);
+		putc((int)arr[i],file);
 		i++;
 	}
 	fclose(file);
 
-    free(buffer);
+    free(arr);
 	return 0;
 
 }
+
