@@ -36,6 +36,7 @@ int main(void)
     {
 clock_t start, stop;
 unsigned long t;
+
 start = clock ();
 
          switch(type_of_sort)
@@ -53,6 +54,10 @@ start = clock ();
             break;
         }
 
+stop = clock();
+printf("Time of sorting %.10lf seconds", (double)(stop - start) / CLOCKS_PER_SEC);
+return 0;
+
      /*  struct tm *ptr;
 time_t It;
 It = time(NULL);
@@ -60,10 +65,8 @@ ptr = localtime(&It);
 printf(asctime(ptr));
 return 0;*/
 
-SelectionSort(size , arr);
-stop = clock();
-printf("Time of sorting %f seconds", (stop - start) / CLK_TCK);
-return 0;
+
+
 
 
 
@@ -72,6 +75,17 @@ return 0;
     SelectionSort(size , arr);// здесь должен быть фрагмент кода, время выполнения которого нужно измерить
     unsigned int end_time = clock(); // конечное время
     unsigned int search_time_selection = end_time - start_time; // искомое время*/
+
+
+
+   /* BubbleSort(size , arr);
+    unsigned int search_time_bubble = end_time - start_time; // искомое время
+    printf("Time sorting: %0.10f\n", search_time_bubble/CLOCKS_PER_SEC);
+
+
+    InsertionSort(size , arr);
+    unsigned int search_time_insertion = end_time - start_time; // искомое время
+    printf("Time sorting: %0.10f\n", search_time_insertion/CLOCKS_PER_SEC);*/
 
        /* clock_t end = clock();
         float time1 = end - start;
@@ -103,3 +117,4 @@ return 0;
 	return 0;
 
 }
+
