@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1585137961 source:c:\users\paterno\documents\banished\12\funsiya.c
+	<stdio.h>
+	<stdlib.h>
+
+1585137827 source:c:\users\paterno\documents\banished\12\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Silka.h"
+
+1584989816 c:\users\paterno\documents\banished\12\silka.h
+
+1584988623 c:\users\paterno\documents\banished\12\funsiya.c
+	<stdio.h>
+	<stdlib.h>
+	"Silka.h"
+
+1584547684 c:\users\paterno\documents\banished\12\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Silka.h"
+
