@@ -13,7 +13,7 @@ void bubble_sort(char *array, int size)
 		{
         	if(array[i]>array[i+1])
 			{
-				int temp=array[i+1];
+				int tmp=array[i+1];
 				array[i+1]=array[i];
 				array[i]=swaps;
 				swaps++;
@@ -44,17 +44,17 @@ void selection_sort(char *array, int size)
     for(int i = 0; i < size-1; i++)
     {
         int min = i;
-        char temp = array[i];
+        char tmp = array[i];
         for(int j = i + 1; j < size; ++j)
         {
-            if (array[j] > temp)
+            if (array[j] > tmp)
             {
                min = j;
-               temp = array[j];
+               tmp = array[j];
             }
         }
         array[min] = array[i];
-        array[i] = temp;
+        array[i] = tmp;
     }
 }
 
@@ -153,3 +153,5 @@ void outputOfTheArray(char* x, int size)
 	}
 	printf("\n");
 }
+
+
