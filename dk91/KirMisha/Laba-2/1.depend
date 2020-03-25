@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1585086800 source:c:\users\paterno\documents\banished\1\f.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"SORTIROVCA.h"
+
+1585086456 c:\users\paterno\documents\banished\1\sort.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1585086800 source:c:\users\paterno\documents\banished\1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SORTIROVCA.h"
+
+1585086801 c:\users\paterno\documents\banished\1\sortirovca.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
