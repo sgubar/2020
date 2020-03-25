@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include "one.h"
+#include "two.h"
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
 #include <string.h>
 
 int main () {
-      // int i;
      float m = 0 ;
     FILE *myfile;
-    myfile = fopen ("/Users/marinakshanovskaa/Desktop/New/laba 2/test2.txt", "r");
+    myfile = fopen ("/Users/marinakshanovskaa/Desktop/THIS/one.c/one.c/test.txt", "r");
 // размер и указатель
         fseek(myfile, 0, SEEK_END); //конец файла
         m = ftell(myfile);
@@ -36,7 +35,7 @@ int main () {
         insertionSort( a, n );
     }
     else if (methodSort == 2){
-
+        
          selectionSort( a, n );
     }
     else if (methodSort == 3){
@@ -62,7 +61,6 @@ int main () {
 clock_t time;
 char ArrayOG[50000];
 char Array[50000];
-int Size = 100000;
     
 FILE *file;
 file = fopen("Result.txt", "w");
@@ -72,28 +70,34 @@ fscanf(file, "%s", ArrayOG);
 
     strcpy(Array, ArrayOG);
     time = clock();
-    bubbleSort(Array, Size);
+    bubbleSort (Array, n);
     time = clock() - time;
     printf("\n Time of Bubble Sort is  %f \n", (double)time/CLOCKS_PER_SEC);
+    fputs(Array, file);
     fprintf(file, "\n\n");
     
     
     strcpy(Array, ArrayOG);
     time = clock();
-    insertionSort(Array, Size);
+    insertionSort (Array, n);
     time = clock() - time;
     printf(" Time of Insertion Sort is  %f \n", (double)time/CLOCKS_PER_SEC);
+    fputs(Array, file);
     fprintf(file, "\n\n");
     
     
     strcpy(Array, ArrayOG);
     time = clock();
-    selectionSort(Array, Size);
+    selectionSort (Array, n);
     time = clock() - time;
     printf(" Time of Selection Sort is  %f\n ", (double)time/CLOCKS_PER_SEC);
+    fputs(Array, file);
      fprintf(file, "\n\n");
     
 fclose(file);
 
 return 0;
+
 }
+
+
