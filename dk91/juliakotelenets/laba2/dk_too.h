@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void BubbleSort ( char *buffer , int length);
-void InsertionSort ( char *buffer , int length);
-void SelectionSort(int length , char *buffer);
+void BubbleSort ( char *arr , int size);
+void InsertionSort ( char *arr , int size);
+void SelectionSort(int size , char *arr);
+
