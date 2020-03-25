@@ -5,12 +5,12 @@
 #include "dk_tool.h"
 
 
-void BubbleSort (char *arr , int size)
+void BubbleSort (char *arr , int length)
 {
 
 
     int theOut;
-	for (theOut = size; theOut > 1; theOut --)
+	for (theOut = length; theOut > 1; theOut --)
 	{
 		int theIn;
 		for (theIn = 0; theIn < theOut ; theIn ++)
@@ -30,11 +30,11 @@ void BubbleSort (char *arr , int size)
 
 
 
-void InsertionSort ( char *arr , int size)
+void InsertionSort ( char *arr , int length)
 {
     int theOut;
 
-	for (theOut = 1; theOut < size; theOut ++)
+	for (theOut = 1; theOut < length; theOut ++)
 	{
 		char theTmp = arr[theOut];
 		int theIn = theOut;
@@ -47,14 +47,14 @@ void InsertionSort ( char *arr , int size)
 	}
 }
 
-void SelectionSort(int size , char *arr)
+void SelectionSort(int length , char *arr)
 {
     int theOut;
-	for (theOut = 0; theOut < size - 1; theOut ++)
+	for (theOut = 0; theOut < length - 1; theOut ++)
 	{
 		int theMinIndex = theOut;
 		int theIn;
-		for (theIn = theOut + 1;theIn < size; theIn ++)
+		for (theIn = theOut + 1;theIn < length; theIn ++)
 		{
 			if (arr[theIn]>arr[theMinIndex])
 			{
