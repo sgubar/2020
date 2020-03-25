@@ -5,60 +5,66 @@
 #include "dk_tool.h"
 
 
-void BubbleSort (char *buffer , int length)
+void BubbleSort (char *arr , int size)
 {
+
+
     int theOut;
-	for (theOut = length; theOut > 1; theOut --)
+	for (theOut = size; theOut > 1; theOut --)
 	{
 		int theIn;
 		for (theIn = 0; theIn < theOut ; theIn ++)
 		{
-			if (buffer[theIn] < buffer[theIn + 1])
+			if (arr[theIn] < arr[theIn + 1]) //меняем местами если стоят не в правильном порядке
 			{
-				char theTmp = buffer[theIn];
-				buffer[theIn] = buffer[theIn + 1];
-				buffer[theIn + 1] = theTmp;
+				char theTmp = arr[theIn];
+				arr[theIn] = arr[theIn + 1];
+				arr[theIn + 1] = theTmp;
 			}
 		}
 	}
+
 }
 
 
-void InsertionSort ( char *buffer , int length)
+
+
+
+void InsertionSort ( char *arr , int size)
 {
     int theOut;
 
-	for (theOut = 1; theOut < length; theOut ++)
+	for (theOut = 1; theOut < size; theOut ++)
 	{
-		char theTmp = buffer[theOut];
+		char theTmp = arr[theOut];
 		int theIn = theOut;
-		while (theIn > 0 && (buffer[theIn-1] <= theTmp))
+		while (theIn > 0 && (arr[theIn-1] <= theTmp))
 		{
-			buffer[theIn] = buffer[theIn - 1];
+			arr[theIn] = arr[theIn - 1];
 			-- theIn;
 		}
-			buffer[theIn] = theTmp;
+			arr[theIn] = theTmp;
 	}
 }
 
-void SelectionSort(int length , char *buffer)
+void SelectionSort(int size , char *arr)
 {
     int theOut;
-	for (theOut = 0; theOut < length - 1; theOut ++)
+	for (theOut = 0; theOut < size - 1; theOut ++)
 	{
 		int theMinIndex = theOut;
 		int theIn;
-		for (theIn = theOut + 1;theIn < length; theIn ++)
+		for (theIn = theOut + 1;theIn < size; theIn ++)
 		{
-			if (buffer[theIn]>buffer[theMinIndex])
+			if (arr[theIn]>arr[theMinIndex])
 			{
 				theMinIndex = theIn;
 			}
 		}
 
-		char theTmp = buffer[theOut];
-		buffer[theOut] = buffer[theMinIndex];
-		buffer[theMinIndex] = theTmp;
+		char theTmp = arr[theOut];
+		arr[theOut] = arr[theMinIndex];
+		arr[theMinIndex] = theTmp;
 	}
 }
 
