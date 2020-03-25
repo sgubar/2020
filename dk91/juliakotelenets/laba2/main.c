@@ -73,17 +73,6 @@ return 0;
     unsigned int end_time = clock(); // конечное время
     unsigned int search_time_selection = end_time - start_time; // искомое время*/
 
-
-
-   /* BubbleSort(size , arr);
-    unsigned int search_time_bubble = end_time - start_time; // искомое время
-    printf("Time sorting: %0.10f\n", search_time_bubble/CLOCKS_PER_SEC);
-
-
-    InsertionSort(size , arr);
-    unsigned int search_time_insertion = end_time - start_time; // искомое время
-    printf("Time sorting: %0.10f\n", search_time_insertion/CLOCKS_PER_SEC);*/
-
        /* clock_t end = clock();
         float time1 = end - start;
         printf("Time sorting: %0.10f\n", time1/CLOCKS_PER_SEC);*/
