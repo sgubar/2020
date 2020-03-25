@@ -1,4 +1,4 @@
-#include "one.h"
+#include "two.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,7 +9,7 @@ void bubbleSort(char arr[], int n)
 for(int i = 0 ; i < n - 1; i++) {
    // сравнение  двух соседних элементов
    for(j = 0 ; j < n - i - 1 ; j++) {
-       if(arr[j] > arr[j+1]) {
+       if (arr[j] > arr[j+1]) {
           
           char tmp = arr[j];
           arr[j] = arr[j+1] ;
@@ -19,11 +19,6 @@ for(int i = 0 ; i < n - 1; i++) {
 }
        fprintResult(arr, n);
 }
-
-
-
-
-
 
 
 // INSERTION
@@ -71,7 +66,7 @@ void selectionSort(char arr[], int n)
 }
 
 void fprintResult(char array[],  int size) {
-    FILE* file = fopen("/Users/marinakshanovskaa/Desktop/New/laba 2/result.txt","w");
+    FILE* file = fopen("/Users/marinakshanovskaa/Desktop/THIS/one.c/one.c/result.txt","w");
     fprintf(file,"Result:\n");
     for (int i = 0; i < size; i++)
     {
