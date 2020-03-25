@@ -9,11 +9,6 @@ char array_1[size], array_2[size];
 
 FILE *sorting;
 sorting = fopen("sorting.txt", "r+");
-if (sorting == NULL)
-    {
-        printf("Error!");
-        return -1;
-    }
 
 fscanf(sorting, "%s", array_1);
 
