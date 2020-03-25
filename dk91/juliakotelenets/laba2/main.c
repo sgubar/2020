@@ -31,10 +31,12 @@ int main(void)
     printf("Select type of sort:\n 1.Bubble Sort\n 2.Insertion Sort\n 3.Selection Sort\n");
     int type_of_sort = 0;
     scanf("%i" , &type_of_sort);
-      clock_t start = clock();
+      //clock_t start = clock();
     if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
     {
-
+clock_t start, stop;
+unsigned long t;
+start = clock ();
 
          switch(type_of_sort)
         {
@@ -51,10 +53,40 @@ int main(void)
             break;
         }
 
+     /*  struct tm *ptr;
+time_t It;
+It = time(NULL);
+ptr = localtime(&It);
+printf(asctime(ptr));
+return 0;*/
 
-        clock_t end = clock();
+SelectionSort(size , arr);
+stop = clock();
+printf("Time of sorting %f seconds", (stop - start) / CLK_TCK);
+return 0;
+
+
+
+
+    /* unsigned int start_time =  clock(); // начальное время
+    SelectionSort(size , arr);// здесь должен быть фрагмент кода, время выполнения которого нужно измерить
+    unsigned int end_time = clock(); // конечное время
+    unsigned int search_time_selection = end_time - start_time; // искомое время*/
+
+
+
+   /* BubbleSort(size , arr);
+    unsigned int search_time_bubble = end_time - start_time; // искомое время
+    printf("Time sorting: %0.10f\n", search_time_bubble/CLOCKS_PER_SEC);
+
+
+    InsertionSort(size , arr);
+    unsigned int search_time_insertion = end_time - start_time; // искомое время
+    printf("Time sorting: %0.10f\n", search_time_insertion/CLOCKS_PER_SEC);*/
+
+       /* clock_t end = clock();
         float time1 = end - start;
-        printf("Time sorting: %0.10f\n", time1/CLOCKS_PER_SEC);
+        printf("Time sorting: %0.10f\n", time1/CLOCKS_PER_SEC);*/
 
 
 	/*SelectionSort(length , buffer);
@@ -82,4 +114,3 @@ int main(void)
 	return 0;
 
 }
-
