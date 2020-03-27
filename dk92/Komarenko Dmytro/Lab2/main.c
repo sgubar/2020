@@ -25,41 +25,36 @@ int main(void)
 	char *arr = (char*)malloc(sizeof(char) * length );
     fgets(arr, length, txt_file1);
     fclose(txt_file1);
-    getchar();
 
-    printf("Select type of sort:\n 1.Bubble Sort\n 2.Insertion Sort\n 3.Selection Sort\n");
-    int type_of_sort = 0;
-    scanf("%i" , &type_of_sort);
+    printf("Select type of sort:\n 1.Bubble Sort\n 2.Selection Sort\n 3.Insertion Sort\n");
+    int type_of_sort;
+    do
+    {
+        printf("Enter an integer between 1 and 3 inclusive:");
+        fflush(stdin);
+    }while (0==("%d",scanf("%i",&type_of_sort))||type_of_sort<1||type_of_sort>3);
 
     if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
     {
-clock_t start, stop;
-start = clock ();
+        clock_t start, stop;
+        start = clock ();
 
-         switch(type_of_sort)
+        switch(type_of_sort)
         {
             case 1:
-            BubbleSort (arr, length);
+            BubbleSort(arr, length);
             break;
-
             case 2:
-            InsertionSort (arr, length);
-            break;
-
-            case 3:
             SelectionSort(arr, length);
             break;
+            case 3:
+            InsertionSort(arr, length);
+            break;
         }
 
-stop = clock();
-printf("Time of sorting %.10lf seconds\n", (double)(stop - start) / CLOCKS_PER_SEC);
-
+        stop = clock();
+        printf("Time of sorting %.10lf seconds\n", (double)(stop - start) / CLOCKS_PER_SEC);
     }
-    else
-        {
-            printf("Wrong! Select type of sort again!\n");
-            return type_of_sort;
-        }
 
     FILE *file = fopen("Sorted_text.txt","wt");
     if(txt_file == NULL)
