@@ -47,7 +47,6 @@ void SelectionSort(char *arr ,int length )
 }
 
 
-
 void InsertionSort (char *arr ,int length)
 {
     int theOut;
