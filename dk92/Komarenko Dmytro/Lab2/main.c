@@ -34,27 +34,25 @@ int main(void)
         fflush(stdin);
     }while (0==("%d",scanf("%i",&type_of_sort))||type_of_sort<1||type_of_sort>3);
 
-    if ((type_of_sort == 1) || (type_of_sort == 2) || (type_of_sort == 3) )
+    clock_t start, stop;
+    start = clock ();
+
+    switch(type_of_sort)
     {
-        clock_t start, stop;
-        start = clock ();
-
-        switch(type_of_sort)
-        {
-            case 1:
-            BubbleSort(arr, length);
-            break;
-            case 2:
-            SelectionSort(arr, length);
-            break;
-            case 3:
-            InsertionSort(arr, length);
-            break;
-        }
-
-        stop = clock();
-        printf("Time of sorting %.10lf seconds\n", (double)(stop - start) / CLOCKS_PER_SEC);
+        case 1:
+        BubbleSort(arr, length);
+        break;
+        case 2:
+        SelectionSort(arr, length);
+        break;
+        case 3:
+        InsertionSort(arr, length);
+        break;
     }
+
+    stop = clock();
+    printf("Time of sorting %.10lf seconds\n", (double)(stop - start) / CLOCKS_PER_SEC);
+    
 
     FILE *file = fopen("Sorted_text.txt","wt");
     if(txt_file == NULL)
