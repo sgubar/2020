@@ -58,9 +58,9 @@ void printLine(Line *aLine)
 {
 	if (NULL != aLine)
 	{
-		printf ("[Line]. A(%d,%d) - B(%d,%d)\n",
+		printf ("[Line]. A(%d,%d) - B(%d,%d): %f\n",
 					aLine->A->x,aLine->A->y,
-					aLine->B->x, aLine->B->y);
+					aLine->B->x, aLine->B->y, lenghLine(aLine));
 	}
 }
 

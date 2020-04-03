@@ -48,5 +48,7 @@ void writeArrayToJSON(FILE *aFile, LineArray *anArray);
 void printArray(LineArray *anArray);
 void sort_simple(LineArray *anArray);
 void sort_select(LineArray *anArray);
+void sort_shell(LineArray *anArray);
+unsigned int binary_find(LineArray *anArray, float lenght_pattern); //21.023796
 
 #endif /* dk_line_array_h */

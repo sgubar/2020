@@ -19,53 +19,59 @@ int main(int argc, const char * argv[])
 	
 	addElement(theArray, &AB);
 	
-	printArray(theArray);
+//	printArray(theArray);
 	
 	A.y = 6;
 	B.x = 6;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 
 	B.x = 28;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 	B.x = 17;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 
 	B.x = 18;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 
 	B.x = 19;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 	B.x = 20;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 	B.x = 21;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 	B.x = 22;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 	B.x = 23;
 
 	addElement(theArray, &AB);
-	printArray(theArray);
+//	printArray(theArray);
 	
 	//sort_simple(theArray);
-	sort_select(theArray);
+	//sort_select(theArray);
 	printArray(theArray);
-	
+
+	sort_shell(theArray);
+
+	printArray(theArray);
+
+	printf("The index of found value is %d \n", binary_find(theArray, 16.031219));
+
 	FILE *theFile = fopen("/Users/sl/Desktop/test.json", "a+");
 	
 	writeArrayToJSON(theFile, theArray);

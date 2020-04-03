@@ -108,6 +108,7 @@ void printArray(LineArray *anArray)
 	
 	for (int i = 0; i < anArray->count; i ++)
 	{
+		printf("(%d) - ", i);
 		printLine(anArray->lines[i]);
 	}
 }
@@ -167,4 +168,89 @@ void sort_select(LineArray *anArray)
 		anArray->lines[theOut] = anArray->lines[theMinIndex];
 		anArray->lines[theMinIndex] = theTmp;
 	}
+}
+
+void sort_shell(LineArray *anArray)
+{
+	if (NULL == anArray)
+	{
+		return ;
+	}
+
+	int theInner = 0;
+	int theOuter = 0;
+	int theH = 1; // start h = 1
+
+	//1. Calculate start value of h
+	while (theH <= anArray->count/3)
+	{
+		theH = theH*3 + 1; // 1, 4, 13, 40, 121, ....
+	}
+
+	//2. Sequental decrease h to 1
+	while (theH > 0)
+	{
+		for (theOuter = theH; theOuter < anArray->count; theOuter ++)
+		{
+			Line *theTmp = anArray->lines[theOuter];
+			theInner = theOuter;
+
+			// the first sub-array {0, 4, 8}
+			while (theInner > theH-1 && lenghLine(anArray->lines[theInner - theH]) >= lenghLine(theTmp))
+			{
+				anArray->lines[theInner] = anArray->lines[theInner - theH];
+				theInner -= theH;
+			}
+
+			anArray->lines[theInner] = theTmp;
+		}
+
+		theH = (theH - 1) / 3; //decrease h
+	}
+}
+
+unsigned int binary_find(LineArray *anArray, float lenght_pattern){
+	if (NULL == anArray)
+	{
+		return (unsigned int)-1;
+	}
+
+	unsigned int theResult = -1;
+
+	sort_shell(anArray);
+
+	theResult = anArray->count;
+	unsigned theLowerBound = 0;
+	unsigned theUpperBound = anArray->count - 1;
+	unsigned theCurIn = 0;
+
+	while (1)
+	{
+		theCurIn = (theLowerBound + theUpperBound) / 2;
+		float current_lenght = lenghLine(anArray->lines[theCurIn]);
+		if (current_lenght == lenght_pattern) //<!- an element was found
+		{
+			theResult = theCurIn;
+			break;
+		}
+		else if (theLowerBound > theUpperBound) //<!- all elements were viewed
+		{
+			break;
+		}
+		else
+		{
+			if (current_lenght < lenght_pattern)
+			{
+				theLowerBound = theCurIn + 1; //!<- in upper position
+			}
+			else
+			{
+				theUpperBound = theCurIn - 1; //!<- in lower position
+			}
+		}
+
+	}
+
+
+	return theResult;
 }
