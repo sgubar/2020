@@ -5,9 +5,8 @@
 #include "hhh.h"
 int main()
 {
-    int n = 100;
+    int n = 1000;
     int masive[n];
-    int i = 0;
     Create(masive, n);
     clock_t time;
     time = clock();
@@ -15,4 +14,10 @@ int main()
     time = clock() - time;
     printf("%f ", (double)time/CLOCKS_PER_SEC);
     out(masive, n);
+    int point = poisk(masive, n, 6);
+    if (point == -1)
+    printf("No elements = 6 !\n");
+    else
+    printf("Element with index %d = 6", point);
+
 }
