@@ -44,3 +44,12 @@ int out(int *m, int n)
         }
         printf("\n");
 }
+int poisk(int *m, int n, int key)
+{
+  for (int i = 0; i < n; i++)
+  {
+    if (m[i] == key)
+      return i;
+  }
+  return -1;
+}
