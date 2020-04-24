@@ -1,5 +1,5 @@
 #include <stdio.h>
-int *reversal(int *arr,int len)
+int reversal(int arr[],int len)
 {
 	int swap=0;
 	for (int i = 0; i < len/2; i++)
