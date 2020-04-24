@@ -1,2 +1,2 @@
 #include <stdio.h>
-int reversal(int *arr,int len);
+int reversal(int arr [],int len);
