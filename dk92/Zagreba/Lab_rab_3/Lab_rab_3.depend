@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1587814546 source:d:\lab_rab\lab_rab_3\sort.c
+	"sort.h"
+
+1587813565 d:\lab_rab\lab_rab_3\sort.h
+	<stdio.h>
+
+1587813957 source:d:\lab_rab\lab_rab_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sort.h"
+	<time.h>
+
