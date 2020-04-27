@@ -62,7 +62,7 @@ void Selection__Sort(char* a, int n)
 }
 void Bubble__Sort(char* a, int n)
 {
-    int i, f;
+    int i, f = 0;
     char buff;
     while (f==0)
     {
