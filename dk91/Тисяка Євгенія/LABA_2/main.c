@@ -18,17 +18,29 @@ int main()
     fgets(a, n, file);
  clock_t start, stop;
  fff(a, n);
- printf("\n\n");
- start = clock ();
-    Insertion__Sort(a, n);
+ printf("\n\nK:");
+ int k;
+ scanf("%d", &k);
+ switch(k)
+ {
+     case 1:
+  start = clock ();
+   Insertion__Sort(a, n);
  stop = clock();
    printf("\nTime of sorting Insertion__Sort %.10lf seconds\n\n", (double)(stop - start) / CLOCKS_PER_SEC);
+    break;
+    case 2:
  start = clock ();
     Selection__Sort(a, n);
  stop = clock();
    printf("\nTime of sorting Selection__Sort %.10lf seconds\n\n", (double)(stop - start) / CLOCKS_PER_SEC);
+ break;
+ case 3:
  start = clock ();
     Bubble__Sort(a, n);
  stop = clock();
    printf("\nTime of sorting Bubble__Sort %.10lf seconds\n\n", (double)(stop - start) / CLOCKS_PER_SEC);
+ break;
+ }
 }
+
