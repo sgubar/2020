@@ -1,1 +1,145 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <time.h>
+
+void swap(char* a, char* b) {
+  int i = 0;
+  char t;
+  while (a[i] || b[i]) {
+    t = a[i];
+    a[i] = b[i];
+    b[i] = t;
+    i++;
+  }
+}
+
+void bubblesort(char arr[][30], int n) {
+  for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - i - 1; j++) {
+      if (strcmp(arr[j], arr[j + 1]) < 0) {
+        swap(arr[j], arr[j + 1]);
+      }
+    }
+  }
+}
+
+void selectionsort(char arr[][30], int n) {
+  for (int i = 0; i < n - 1; i++) {
+    int x = i;
+    for (int j = i + 1; j < n; j++) {
+      if (strcmp(arr[j], arr[x]) > 0) {
+        x = j;
+      }
+    }
+    swap(arr[x], arr[i]);
+  }
+}
+
+void insertionsort(char arr[][30], int n) {
+  char buf[30];
+  for (int i = 1; i < n; i++) {
+    strcpy(buf, arr[i]);
+    int j = i - 1;
+    while (j >= 0 && strcmp(arr[j], buf) < 0) {
+      strcpy(arr[j + 1], arr[j]);
+      j = j - 1;
+    }
+    strcpy(arr[j + 1], buf);
+  }
+}
+
+void load_words(char arr[][30], int* n) {
+  *n = 0;
+  FILE* fp = fopen("words.txt", "r");
+  while (fgets(arr[*n], 30, fp)) {
+    int len = strlen(arr[*n]);
+    if (arr[*n][len - 1] == '\n') {
+      arr[*n][len - 1] = '\0';
+    }
+    (*n)++;
+  }
+  fclose(fp);
+}
+
+void print_words(char arr[][30], int n) {
+  for (int i = 0; i < n; i++) {
+    printf("  %s\n", arr[i]);
+  }
+}
+
+int main() {
+  printf("hello world\n");
+
+  char words[50][30];
+  int n;
+
+  clock_t start;
+
+  while (true) {
+    printf(
+      "\n"
+      "options:\n"
+      "  1) measure bubblesort\n"
+      "  2) measure selectionsort\n"
+      "  3) measure insertionsort\n"
+      "  4) exit\n");
+
+    int opt;
+    printf("i want to: ");
+    scanf("%d%*c", &opt);
+
+    if (opt == 4) {
+      printf("bye\n");
+      break;
+    }
+
+    switch (opt) {
+      case 1:
+        {
+          load_words(words, &n);
+          printf("\nbefore:\n");
+          print_words(words, n);
+
+          start = clock();
+          bubblesort(words, n);
+          printf("\ntime: %f ms\n", ((double)clock() - start) / CLOCKS_PER_SEC * 1000);
+
+          printf("\nafter:\n");
+          print_words(words, n);
+        }
+        break;
+      case 2:
+        {
+          load_words(words, &n);
+          printf("\nbefore:\n");
+          print_words(words, n);
+
+          start = clock();
+          selectionsort(words, n);
+          printf("\ntime: %f ms\n", ((double)clock() - start) / CLOCKS_PER_SEC * 1000);
+
+          printf("\nafter:\n");
+          print_words(words, n);
+        }
+        break;
+      case 3:
+        {
+          load_words(words, &n);
+          printf("\nbefore:\n");
+          print_words(words, n);
+
+          start = clock();
+          insertionsort(words, n);
+          printf("\ntime: %f ms\n", ((double)clock() - start) / CLOCKS_PER_SEC * 1000);
+
+          printf("\nafter:\n");
+          print_words(words, n);
+        }
+        break;
+    }
+  }
+
+  return 0;
+}
 
