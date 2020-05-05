@@ -104,10 +104,8 @@ int mainProcess(){
 	 clock_t second = clock();
 	float time = second - first;
         printf("Time sorting: %0.10f\n", time/CLOCKS_PER_SEC);
-     inPut( length,  aArray);
-    searchArray(aArray, length);
-     // fclose(txt_file1);
-
+     searchArray(aArray, length);
+	inPut( length,  aArray);
     }
 
      void inPut( long length, char *aArray){
