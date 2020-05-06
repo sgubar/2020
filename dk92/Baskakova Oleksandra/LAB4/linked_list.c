@@ -15,12 +15,6 @@ void list_add(List **list, char val)
 	*list = list_new(val);
 }
 
-void list_node_del(List **node)
-{
-	free(*node);
-	(*node) = (*node)->next;
-}
-
 void list_reverse(List **list)
 {
 	List *prev = NULL;
