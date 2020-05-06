@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "QuickSort.h"
 #include "2Serch.h"
 
@@ -14,19 +15,29 @@ int main() {
     int size;
     size = vvodInt();
 
+    printf("File is creating. Please waite \n");
     genCharInFile(size);
 
     char *quick = malloc(size * sizeof(char));
 
+    printf("File is riding. Please waite \n");
     ReadFileToArray(quick, size);
 
-    quickSort2(quick, 0, size - 1);
 
+    clock_t theStart0 = clock();
+    quickSort(quick, 0, size - 1);
+    clock_t theEnd0 = clock();
+    printf ("Time QuickSort: %.10lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+    printf("File is writing. Please waite \n");
     printInFile(quick, size);
 
     char SerchElement = vvodChar();
 
-    printf("%d", binarSerch(quick, SerchElement, size));
+    clock_t theStart1 = clock();
+    printf("Position of elements (%c) is %d \n",SerchElement, binarSerch(quick, SerchElement, size));
+    clock_t theEnd1 = clock();
+    printf ("Time Binar Search: %.10lf\n", (double)(theEnd1 - theStart1)/CLOCKS_PER_SEC);
 
     free(quick);
 
@@ -60,7 +71,7 @@ int vvodInt(){
 char vvodChar(){
     char buf[32];
     int pass = 0;
-    int c;
+    char c;
     printf("Enter letter to search position\n");
 
     do{
@@ -91,7 +102,7 @@ void genCharInFile(int length)
         printf("oshibka\n");
     }
     char a;
-    for(int i=0; i < length; i++)
+    for(int i = 0; i < length; i++)
     {
         if(rand()%2){
             a = (rand()%26)+65;

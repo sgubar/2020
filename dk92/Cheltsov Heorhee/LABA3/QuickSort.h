@@ -7,6 +7,6 @@
 
 int partitionIt(char anArray[], int aLeftIndex, int aRightIndex, char aPivot);
 void quickSort(char anArray[], int aLeftIndex, int aRightIndex);
-void quickSort2(char anArray[], int aLeftIndex, int aRightIndex);
+//void quickSort2(char anArray[], int aLeftIndex, int aRightIndex);
 
 #endif //LR3CHSQUICKSORTBINARSERCH_QUICKSORT_H
