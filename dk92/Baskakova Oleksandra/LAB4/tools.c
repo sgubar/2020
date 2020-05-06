@@ -1,48 +1,30 @@
-#include "tools.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include "linked_list.h"
 
-unsigned int getUnsignedInt(char* label)
+List *load_from_file(char *path)
 {
-    char *p, s[100];
-    int result;
-    printf(label);
-    while (fgets(s, sizeof(s), stdin))
-    {
-        result = strtoul(s, &p, 10);
+    FILE *file = fopen(path, "r");
+    char c = fgetc(file);
 
-        if (p == s || *p != '\n')
-        {
-            printf("Please enter an unsigned integer: \n");
-            continue;
-        }
-                return result;
+    List *list = list_new(c);
+    while (c != EOF)
+    {
+        c = fgetc(file);
+        if (c == EOF)
+            break;
+        if (isalpha(c))
+            list_add(&list, c);
     }
+    return list;
 }
 
-void fprintResult(FILE *file, char label[], int *result, int size)
+void write_to_file(List *list, char *path)
 {
-    fputs(label, file);
-    for (int i = 0; i < size; i++)
+    FILE *file = fopen(path, "w");
+    for (; list != NULL; list = list->next)
     {
-        fprintf(file, "%d: %d\n", i, result[i]);
+        putc(list->val, file);
     }
-}
-
-void *createArray(int size)
-{
-    int *array = (int)calloc(size, sizeof(int));
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = rand() % 10000;
-    }
-    return array;
-}
-
-int linearSearch(int *array, int size, int element)
-{
-    for (size_t i = 0; i < size; i++)
-    {
-        if (array[i] == element)
-            return i;
-    }
-    return -1;
 }
