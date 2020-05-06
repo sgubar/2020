@@ -66,12 +66,6 @@ void quickSort(char *array, int left, int right){
 	    quickSort(array, j + 1, right);
    }
 }
-void swap(int array[], int left, int right)
-{
-	int tmp = array[left];
-	array[left] = array[right];
-	array[right] = tmp;
-}
 
 int binarySearch(int a, int array[], int n) {
     int mediana;
@@ -90,7 +84,7 @@ int binarySearch(int a, int array[], int n) {
             return mediana;
         }
     }
-    if (search == -1){
+    if (a == -1){
         printf("Not found!\n");
     }
     return -1;
