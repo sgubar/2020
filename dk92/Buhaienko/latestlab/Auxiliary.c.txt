@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "List.h"
+#include <malloc.h>
+#include "Auxiliary.h"
+
+int filesize(FILE *in)
+{
+    fseek(in, 0, SEEK_END);
+    int sz = ((ftell(in)+1)/2);
+    rewind(in);
+    printf("quality of numbers in file: %i\n", sz);
+    return sz;
+}
+int getrange(int A, int B)
+{
+    printf("enter lower range: ");
+    if(scanf("%i", &A) != 1)
+    {
+     printf("invalid input\n");
+    return -1;
+    }
+    else
+    printf("enter higher range: ");
+    if(scanf("%i", &B) != 1)
+    {
+    printf("invalid input");
+    return -1;
+    }
+    else
+    return A, B;
+}

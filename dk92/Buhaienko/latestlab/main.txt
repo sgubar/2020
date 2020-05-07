@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "List.h"
+#include <malloc.h>
+#include "Auxiliary.h"
+/*Этот код берет из файла инты, разделенные пробелом, переносит их в список и за один
+его проход печатает числа в порядке: сначала все числа меньше чем, после
+числа из диапазона [A;B] и наконец все остальные числа, сохраняя внутренний порядок */
+int main()
+{
+    //инициализация диапазона
+    int A = 0;
+    int B = 0;
+
+    if(getrange(A, B) == -1)
+    {
+        return -1;
+    }
+
+    //рабочие переменные
+    int f = 0;
+    int m = 0;
+    int e = 0;
+    int i = 0;
+
+    //открываем заданый файл, лежащий в корневой папке
+    FILE *in = fopen("input.txt", "r");
+    if(in == NULL)
+    {
+        return -1;
+    }
+
+    //создаем список
+   IntList *theList = MakeList();
+
+    // расчитываем вес открытого файла
+    int sz = filesize(in);
+    //создаем промежуточный "динамический" массив
+    int t[sz];
+
+    // вносим в массив числа из файла
+    //getnum(in, t[sz]);
+    while(!feof(in))
+    {
+    fscanf(in, "%i", &t[i]);
+    i++;
+    }
+    //создаем новые ноды и вносим их в список
+
+    printf("the Input: ");
+    for(int i =0; i<sz; i++)
+    {
+    IntNode *theNode = MakeNodeint(t[i]);
+    printf("%i ", theNode->value);
+    AddNode(theList,theNode);
+    }printf("\nquantity of nodes in the list: %i\n", CountList(theList));
+
+    //создаем динамические массивы, в которых будут находится группы чисел
+    int *arrf;
+    arrf = (int *)malloc(CountList(theList)*sizeof(int));
+    int *arrm;
+    arrm = (int *)malloc(CountList(theList)*sizeof(int));
+    int *arre;
+    arre = (int *)malloc(CountList(theList)*sizeof(int));
+
+      //выбираем первую ноду из списка и начинаем сравнивать числа с заданым диапазоном, паралельно внося
+      //в соответствующие группы
+        IntNode *theNode = theList->head;
+    for(int i = 0; i < CountList(theList); i++)
+    {
+
+        if(theNode->value < A)
+        {
+            arrf[f] = theNode->value;
+            f ++;
+        }
+        else if(theNode->value <= B && theNode->value >= A)
+        {
+            arrm[m] = theNode->value;
+            m ++;
+        }
+        else if(theNode->value > B)
+        {
+            arre[e] = theNode->value;
+            e ++;
+        }
+        theNode=theNode->nextNode;
+    }
+
+    //по очереди выводим в консоль группы чисел
+        printf("the Result: ");
+        for(int i=0; i<f; i++)
+        {
+            printf("%i ", arrf[i]);
+        }printf(" ");
+
+        for(int i=0; i<m; i++)
+        {
+            printf("%i ", arrm[i]);
+        }printf(" ");
+
+        for(int i=0; i<e; i++)
+        {
+            printf("%i ", arre[i]);
+        }printf(" ");
+
+// чистим память
+void FreeList(theList);
+free(arre);
+free(arrm);
+free(arrf);
+fclose(in);
+
+    return 0;
+}

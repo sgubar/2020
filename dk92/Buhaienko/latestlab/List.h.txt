@@ -1,0 +1,36 @@
+#ifndef LIST_H_INCLUDED
+#define LIST_H_INCLUDED
+#include <stdio.h>
+
+// Predeclaration
+typedef struct __IntNode IntNode;
+// The node declaration
+struct __IntNode
+{
+  int value;
+  IntNode *nextNode;//<! - the reference to next node
+};
+typedef struct __IntList
+{
+  IntNode *head;
+  IntNode *tail;
+  int count;
+}IntList;
+
+
+IntNode *MakeNodeint(int aValue);
+
+IntList *MakeList();
+
+IntNode *AddNode(IntList *aList, IntNode *aNewNode);
+
+IntNode *NodeAtIndex(const IntList *aList, int anIndex);
+
+void FreeList(IntList *aList);
+
+void FreeIntNode(IntNode *aNode);
+
+int CountList(const IntList *aList);
+
+
+#endif // LIST_H_INCLUDED
