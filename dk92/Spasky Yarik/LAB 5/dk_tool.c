@@ -51,22 +51,18 @@ static intNode *createNodeWithIntValue(int value)
 void insertIntValueToTree(intTree *aTree, int aValue)
 {
     if (NULL == aTree)
-    {
-        return;
-    }
+            return;
+    
 
     intNode *theNode = createNodeWithIntValue(aValue);
     if (NULL == theNode)
-    {
-        return;
-    }
+            return;
+    
 
     if (NULL == aTree->root)
-    {
-        aTree->root = theNode;
-        aTree->count ++;
-    }
-    else
+            aTree->root = theNode;
+      
+       else
     {
         intNode *theCurrent = aTree->root;
         intNode *theParent = NULL;
@@ -95,8 +91,9 @@ void insertIntValueToTree(intTree *aTree, int aValue)
             }
         }
 
-        aTree->count ++;
+       
     }
+     aTree->count ++;
 }
 
 
@@ -172,74 +169,59 @@ int deleteValueFromTree(intTree *aTree, int aValue)
         }
 
         if (NULL == theCurrent)
-        {
-
-            return 0;
-        }
+                    return 0;
+        
     }
 
 
     if (NULL == theCurrent->leftChild && NULL == theCurrent->rightChild)
     {
         if (aTree->root == theCurrent)
-        {
-            aTree->root = NULL;
-        }
+                    aTree->root = NULL;
+        
         else if (LeftChild)
-        {
-            theParent->leftChild = NULL;
-        }
+                    theParent->leftChild = NULL;
+        
         else
-        {
-            theParent->rightChild = NULL;
-        }
+                    theParent->rightChild = NULL;
+        
     }
     else if (NULL == theCurrent->rightChild)
     {
         if (aTree->root == theCurrent)
-        {
-            aTree->root = theCurrent->leftChild;
-        }
+                    aTree->root = theCurrent->leftChild;
+        
         else if (LeftChild)
-        {
-            theParent->leftChild = theCurrent->leftChild;
-        }
+                    theParent->leftChild = theCurrent->leftChild;
+        
         else
-        {
-            theParent->rightChild = theCurrent->leftChild;
-        }
+                    theParent->rightChild = theCurrent->leftChild;
+        
     }
     else if (NULL == theCurrent->leftChild)
     {
         if (aTree->root == theCurrent)
-        {
-            aTree->root = theCurrent->rightChild;
-        }
+                    aTree->root = theCurrent->rightChild;
+        
         else if (LeftChild)
-        {
-            theParent->leftChild = theCurrent->rightChild;
-        }
+                    theParent->leftChild = theCurrent->rightChild;
+        
         else
-        {
-            theParent->rightChild = theCurrent->rightChild;
-        }
+                    theParent->rightChild = theCurrent->rightChild;
+        
     }
     else
     {
         intNode * theRecipient = getRecipient(aTree, theCurrent);
         if (aTree->root == theRecipient)
-        {
-            aTree->root = NULL;
-        }
+                    aTree->root = NULL;
+        
         else if (LeftChild)
-        {
-            theParent->leftChild = theRecipient;
-        }
+                    theParent->leftChild = theRecipient;
+        
         else
-        {
-            theParent->rightChild = theRecipient;
-        }
-
+                    theParent->rightChild = theRecipient;
+        
     }
 
     free(theCurrent);
@@ -251,9 +233,8 @@ int deleteValueFromTree(intTree *aTree, int aValue)
 void printTree(intNode *aRoot)
 {
     if(NULL == aRoot)
-    {
-        return;
-    }
+            return;
+    
 
     printf("%d " , aRoot->value);
 
@@ -263,4 +244,3 @@ void printTree(intNode *aRoot)
 
 
 }
-
