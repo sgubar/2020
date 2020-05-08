@@ -1,3 +1,5 @@
+#ifndef dk_tool
+#define dk_tool
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,4 +28,4 @@ int deleteValueFromTree(intTree *aTree, int aValue);
 intNode *findNodeWithValue(intTree *aTree ,int aValue);
 
 
-
+#endif
