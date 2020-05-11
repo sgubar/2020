@@ -22,7 +22,7 @@ void shellSort(char *mass, int Count)
 			theInner = theOuter;
 
 			// the first sub-array {0, 4, 8}
-			while (theInner > theH-1 && mass[theInner - theH] <= theTmp)
+			while (theInner > theH-1 && mass[theInner - theH] >= theTmp)
 			{
 				mass[theInner] = mass[theInner - theH];
 				theInner -= theH;
@@ -44,17 +44,17 @@ int BinarySearch(int value, char *mass, int asize )
     {
         middle = (low + high)/2;
 
-        if(value < mass[middle])
+        if(value == mass[middle])
+        {
+            return middle;
+        }
+        else if (value < mass[middle])
         {
             high = middle - 1;
         }
         else if(value > mass[middle])
         {
             low = middle + 1;
-        }
-        else if(value == mass[middle])
-        {
-            return middle;
         }
 
     }return -1;
@@ -90,3 +90,4 @@ void randomizer (char *mass, int size)
         }
     }
 }
+
