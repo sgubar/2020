@@ -26,9 +26,10 @@ int main()
     WriteToFile(mass, size, "output.txt");
 printf ("time of Shell sorting: %.10lf\n", (double)(timeStop - timeStart)/CLOCKS_PER_SEC);
 
- int symbol;
-printf("\n\n   Enter Symbol : ");
-scanf("%d", &symbol);
+char symbol;
+fflush(stdin);
+printf("\n\n Enter Symbol: ");
+scanf("%c", &symbol);
 
     int position;
     timeStart1 = clock()/(float)CLOCKS_PER_SEC;
