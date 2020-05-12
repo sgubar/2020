@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "hider.h"
+double stepin(int first, int one, int two)
+{
+    int a = first;
+    int exp = one+two;
+    if(exp > 0){
+
+         for(int i = 1; i < exp; i++)
+    {
+        first *= a;
+    }
+    return first;
+    }
+return 0;
+}
+
+
+double sum(int start, int finish)
+{
+    double a = 0;
+    for(; start <= finish; start++)
+        {
+            a = a  + stepin(2, start, finish);
+        }
+        return a;
+}
