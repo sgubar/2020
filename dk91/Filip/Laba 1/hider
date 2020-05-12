@@ -1,0 +1,8 @@
+#ifndef HIDER_H_INCLUDED
+#define HIDER_H_INCLUDED
+
+double sum(int finish, int start);
+double stepin(int first, int one, int two);
+
+
+#endif // HIDER_H_INCLUDED
