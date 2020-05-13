@@ -11,7 +11,7 @@
 // Constants
 const int kSLListError = -1;
 
-//Create/delete a list
+//Create a list
 IntList *SLCreateList() //use
 {
     //Allocate memory for the list structure
