@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "SSort.h"
+
+int filesize(FILE *in)
+{
+    fseek(in, 0, SEEK_END);
+    int sz = (ftell(in));
+    rewind(in);
+    printf("quality of symbols in file: %i\n", sz);
+    return sz;
+}
+
+void SSort(char InArray[], int InCount)
+{
+    int inner = 0;
+    int outer = 0;
+    int iterator = 1;
+
+    while(iterator <= InCount/3)
+    {
+        iterator = iterator*3 + 1;
+    }
+
+    while(iterator > 0)
+    {
+        for(outer = iterator; outer < InCount; outer++)
+        {
+           int Tmp = InArray[outer];
+           inner = outer;
+
+           while(inner > iterator-1 && InArray[inner - iterator] <= Tmp)
+           {
+               InArray[inner] = InArray[inner-iterator];
+               inner = inner - iterator;
+           }
+
+           InArray[inner] = Tmp;
+        }
+
+    iterator = (iterator-1)/3;
+
+    }
+}
+
+int LinearSearch(char in[], int size, int index)
+{
+   int Result = -1;
+   for(int i = 0; i < size; i++)
+   {
+       if(in[i] == index)
+       {
+           Result = i;
+           break;
+       }
+   }
+
+   return Result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

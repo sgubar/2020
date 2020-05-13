@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "SSort.h"
+#include <time.h>
+
+int main()
+{
+ int i = 0;
+
+FILE *in = fopen("input.txt", "r");
+FILE *out = fopen("output.txt", "w");
+if(in == NULL || out == NULL)
+{
+  return -1;
+}
+
+int size = filesize(in);
+char t[size];
+
+
+for(int a = 0; a < size; a++)
+{
+fscanf(in, "%c", &t[i]);
+i++;
+}
+
+clock_t theStart0 = clock();
+SSort(t, size);
+clock_t theEnd0 = clock();
+printf ("time of Shell sorting: %.20lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+theStart0 = clock();
+printf("found searched at index: %i\n",LinearSearch(t, size, 122)+1); //a
+theEnd0 = clock();
+printf ("time of linear searching: %.20lf\n", (double)(theEnd0 - theStart0)/CLOCKS_PER_SEC);
+
+for(int d = 0; d < size; d++)
+{
+    fprintf(out, "%c", t[d]);
+}
+
+fclose(in);
+fclose(out);
+
+return 0;
+}
