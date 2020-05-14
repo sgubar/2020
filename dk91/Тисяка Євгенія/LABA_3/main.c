@@ -31,7 +31,10 @@ clock_t start, stop;
     printf("\nKey:");
  char key;
  scanf("%c", &key);
+ start = clock ();
  f = poisk(mass, n, key);
+ stop = clock();
+ printf("\nTime of poisk %.5lf seconds\n\n", (double)(stop - start) / CLOCKS_PER_SEC);
  if(f == -1)
  {
      printf("No elements %c",key);
