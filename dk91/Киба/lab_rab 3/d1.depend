@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1589487278 source:c:\users\admin\documents\34\d1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1589547521 source:d:\lab_rab\jeka\d1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"jiktl.h"
+
+1589546868 source:d:\lab_rab\jeka\d1\jiktl.c
+	"jiktl.h"
+	<stdio.h>
+	<stdlib.h>
+
+1589546868 d:\lab_rab\jeka\d1\jiktl.h
+
+1589547704 source:c:\users\admin\desktop\lab_3\d1\d1\jiktl.c
+	"jiktl.h"
+	<stdio.h>
+	<stdlib.h>
+
+1589547704 c:\users\admin\desktop\lab_3\d1\d1\jiktl.h
+
+1589547704 source:c:\users\admin\desktop\lab_3\d1\d1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"jiktl.h"
+
