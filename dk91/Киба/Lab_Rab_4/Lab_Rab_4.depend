@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1589546455 source:d:\lab_rab\lab_rab_4\laba4.c
+	"Laba4.h"
+	<stdio.h>
+	<stdlib.h>
+
+1589546410 d:\lab_rab\lab_rab_4\laba4.h
+	<stdio.h>
+	<stdlib.h>
+
+1589546410 source:d:\lab_rab\lab_rab_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Laba4.h"
+
