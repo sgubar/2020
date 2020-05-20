@@ -3,11 +3,10 @@
 
 
 #include<stdio.h>
-#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 
-int random(int x);
+int rnd(int x);
 char menu(void);
 void swap(int*px, int*py);
 int comp (const int *i, const int *j);

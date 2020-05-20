@@ -20,7 +20,7 @@ printf("\n_____________\n ");
 	
 		for(y=0;y!=x;y++)
 		{	
-			arr [y]	 =	random(y);
+			arr [y]	 =	rnd(y);
 	printf("%c ",arr[y]);
 		
 		}	
@@ -58,6 +58,7 @@ flag=menu();
 			
 if (flag==0){
 //	{
+		fflush(stdin);
 		printf("enter what LETTER you searching:\n");
 		scanf("%c",&quest);
 		printf("\n|||%c",quest);	
@@ -71,7 +72,7 @@ unsigned long result = binarySearch(arr,x,quest) ;
 	
 	printf("%lu",result);
 	
-	void afree(short int *arr);
+	free(arr);
 	
 	return 0;
 }

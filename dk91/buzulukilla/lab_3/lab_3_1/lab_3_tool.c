@@ -9,7 +9,7 @@ temp = *px;
 
 
 
-int random(int A){
+int rnd(int A){
 
 srand(time(NULL)+A);
 	
@@ -39,10 +39,11 @@ char menu(void)
 {
 	char a=1,flag=1;
 while (a!=0){
+fflush(stdin);
 
 printf("did you search something? Y/N\n");
 	
-int ask;
+char ask = 0;
 	
 		scanf("%c",&ask);
 		
@@ -74,6 +75,6 @@ unsigned long binarySearch(int  arr[], long unsigned x, char target)
         if (arr[x] < target)
         return binarySearch(arr,x+x/2,target); 
      }
-	 else
-    return -1; 
-} 
+
+	return -1;
+}
