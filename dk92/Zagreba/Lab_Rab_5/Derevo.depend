@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1589995553 source:d:\lab_rab\lab_rab_5\derevo\derevo.c
+	"Derevo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1589995553 source:d:\lab_rab\lab_rab_5\derevo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Derevo.h"
+
+1589971749 d:\lab_rab\lab_rab_5\derevo\derevo.h
+
