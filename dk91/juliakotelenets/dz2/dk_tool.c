@@ -16,8 +16,8 @@ Ellipse *createEllipse(Point *Centre, int *R, int *r)
 		{
 		    // Присваивание значения узлу
 			theResult->O = copyPointWithPoint(Centre);
-			theResult->R = copyPointWithPoint(R);
-			theResult->r = copyPointWithPoint(r);
+			theResult->R = *R;
+			theResult->r = *r;
 		}
 	}
 
