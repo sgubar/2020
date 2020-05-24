@@ -4,14 +4,14 @@
 
 int main(int argc, const char * argv[])
 {
-    long LenghtOfArray = 0; //Переменная хранит кол-во символов в входящем файле
-    char* ReadedArray; //Переменная хранит данные, считанные из файла
-    InputFileLenght(&LenghtOfArray); //Узнаем кол-ва символов
+    long LenghtOfArray = 0; 
+    char* ReadedArray; 
+    InputFileLenght(&LenghtOfArray); 
     
-    ReadedArray = ReadFromFileToArray(LenghtOfArray); //А считанный массив получаем из функции, указав кол-во символов (чтобы правильно выделить память)
+    ReadedArray = ReadFromFileToArray(LenghtOfArray); 
     
-    SortingFuntion(ReadedArray, LenghtOfArray); //В конце сортируем массив
+    SortingFuntion(ReadedArray, LenghtOfArray); 
     
-    return 0; //Конец
+    return 0; 
 }
 
