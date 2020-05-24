@@ -1,8 +1,7 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
-#include "hhh.h"
-
+#include <stdlib.h>
+#include <math.h>
+#include "hidk.h"
 
 Node* getFreeNode(T value, Node *parent)
 {
@@ -109,14 +108,6 @@ void insert(Node **head, int value)
     }
 }
 
-void printTree(Node *root, const char *dir, int level)
-{
-    if (root) {
-        printf("lvl %d %s = %d\n", level, dir, root->data);
-        printTree(root->left, "left", level+1);
-        printTree(root->right, "right", level+1);
-    }
-}
 Stack* createStack() {
     Stack *tmp = (Stack*) malloc(sizeof(Stack));
     tmp->limit = STACK_INIT_SIZE;
@@ -162,4 +153,22 @@ void iterInorder(Node *root) {
         }
     }
     freeStack(&ps);
+}
+void release_node(Node *node)
+{
+    if (node)
+    {
+        if (node->parent)
+            free(node->parent);
+        free(node);
+    }
+}
+void delete_tree(Node *root)
+{
+    if (root->left)
+        delete_tree(root->left);
+    if (root->right)
+        delete_tree(root->right);
+
+    release_node(root);
 }
