@@ -1,5 +1,5 @@
-#ifndef HHH_H_INCLUDED
-#define HHH_H_INCLUDED
+#ifndef HIDK_H_INCLUDED
+#define HIDK_H_INCLUDED
 
 typedef int T;
 
@@ -29,10 +29,11 @@ Node* getMaxNode(Node *root);
 Node* getMinNode(Node *root);
 void removeNode(Node *target);
 void insert(Node **head, int value);
-void printTree(Node *root, const char *dir, int level);
 void deleteValue(Node *root, T value);
 void push(Stack *s, Node *item);
 void freeStack(Stack **s);
 void iterInorder(Node *root);
+void delete_tree(Node *root);
+void release_node(Node *node);
 
-#endif  //HHH_H_INCLUDED
+#endif // HIDK_H_INCLUDED
