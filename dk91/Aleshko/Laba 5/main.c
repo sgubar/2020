@@ -1,4 +1,8 @@
-int main()
+#include <stdio.h>
+#include <stdlib.h>
+#include "hidk.h"
+
+int main(int argc, char const *argv[])
 {
     Node *root = NULL;
     insert(&root, 10);
@@ -18,6 +22,8 @@ int main()
     printf("------------------\n");
     deleteValue(root, 10);
     iterInorder(root);
+    delete_tree(root);
 
     getch();
 }
+
