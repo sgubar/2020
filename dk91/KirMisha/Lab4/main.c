@@ -2,12 +2,11 @@
 #include "func.h"
 
 int main(int argc, const char * argv[]) {
-    Node* list = NULL; //Создали список
-
+    Node* list = NULL; 
     int amount = 0;
     int DatatoWrite = 0;
 
-    printf("Сколько ячеек будет введено: ");
+    printf(" ");
     scanf("%d", &amount);
 
     for (int i = 0; i < amount; ++i) {
