@@ -8,10 +8,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void InputFileLenght(long* SizeOfArray); //Функция считывания кол-ва символов в файле
-char* ReadFromFileToArray(long ArraySize); //Функция считывания данных в массив
-void SortingFuntion(char* InputArray, long SizeOfArray); //Сортировка методом Шелла
-void SearchSymbolInArray(char* SortedArray, long SizeOfArray); //Функция бинарного поиска
-void WriteToFile (char* InputArray); //Запись в файл
+void InputFileLenght(long* SizeOfArray); 
+char* ReadFromFileToArray(long ArraySize); 
+void SortingFuntion(char* InputArray, long SizeOfArray); 
+void SearchSymbolInArray(char* SortedArray, long SizeOfArray); 
+void WriteToFile (char* InputArray); 
 
 #endif /* func_h */
