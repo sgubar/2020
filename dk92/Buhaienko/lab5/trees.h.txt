@@ -1,0 +1,26 @@
+#ifndef TREES_H_INCLUDED
+#define TREES_H_INCLUDED
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct __Node
+{
+    int manul;
+    int NOM;
+    struct __Node *leftmanul;
+    struct __Node *rightmanul;
+}Node, *NodeMnl;
+
+typedef struct __Tree
+{
+    NodeMnl root;
+}Tree, *TreeMnl;
+
+TreeMnl createTree();
+void insertNode(TreeMnl aTree, int themanul, int NumOfManul);
+void printManuls(NodeMnl aNode);
+NodeMnl findManul(TreeMnl aTree, int NumberOfManul);
+void killManul(TreeMnl aTree, int deadmanul);
+void deleteTree(TreeMnl aTree);
+
+#endif // TREES_H_INCLUDED

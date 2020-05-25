@@ -1,0 +1,198 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "trees.h"
+
+TreeMnl createTree()
+{
+    TreeMnl aTree = (TreeMnl) malloc(sizeof(Tree));
+    if(aTree != NULL)
+    {
+        aTree->root = NULL;
+    }
+    return aTree;
+}
+
+void insertNode(TreeMnl aTree, int themanul, int NumOfManul)
+{
+    NodeMnl aNewNode = (NodeMnl) malloc(sizeof(Node));
+    bzero(aNewNode, sizeof(Node));
+
+    aNewNode->manul = themanul;
+    aNewNode->NOM = NumOfManul;
+    if(aTree->root == NULL)
+    {
+        aTree->root = aNewNode;
+    }
+    else
+    {
+        NodeMnl theCurrent = aTree->root;
+        NodeMnl theParent = NULL;
+
+        while(1)
+        {
+            theParent = theCurrent;
+
+            if(themanul < theCurrent->manul)
+            {
+                theCurrent = theCurrent->leftmanul;
+                if(theCurrent == NULL)
+                {
+                    theParent->leftmanul = aNewNode;
+                    break;
+                }
+            }
+            else
+            {
+                theCurrent = theCurrent->rightmanul;
+                if(theCurrent == NULL)
+                {
+                    theParent->rightmanul = aNewNode;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void printManuls(NodeMnl aNode)
+{
+if(aNode == NULL) return;
+
+printManuls(aNode->leftmanul);
+printManuls(aNode->rightmanul);
+printf("number of manuls in node %d: %d\n",aNode->NOM, aNode->manul);
+}
+
+NodeMnl findManul(TreeMnl aTree, int NumberOfManul)
+{
+    NodeMnl theCurrent = aTree->root;
+
+    while(NumberOfManul != theCurrent->NOM)
+    {
+        theCurrent =(NumberOfManul < theCurrent->NOM)
+                        ? theCurrent->leftmanul
+                        : theCurrent->rightmanul;
+
+        if(theCurrent == NULL)
+        {
+            break;
+        }
+    }
+
+    return theCurrent;
+}
+
+NodeMnl whokiller(TreeMnl aTree, NodeMnl killedmanul)
+{
+    NodeMnl AKillersParent = killedmanul;
+    NodeMnl AKiller = killedmanul;
+    NodeMnl theCurrent = killedmanul->rightmanul;
+
+    while(theCurrent != NULL)
+    {
+        AKillersParent = AKiller;
+        AKiller = theCurrent;
+        theCurrent = theCurrent->leftmanul;
+    }
+
+    if(AKiller != killedmanul->rightmanul)
+    {
+        AKillersParent->leftmanul = AKiller->rightmanul;
+        AKiller->rightmanul = killedmanul->rightmanul;
+    }
+    return AKiller;
+}
+
+void freenode(NodeMnl aNode)
+{
+    if(aNode != NULL)
+    {
+        free(aNode);
+    }
+}
+
+void killManul(TreeMnl aTree, int deadmanul)
+{
+    NodeMnl theCurrent = aTree->root;
+    NodeMnl theParent = aTree->root;
+
+    int aleftmanul = 1;
+
+    while(deadmanul != theCurrent->manul)
+    {
+        theParent = theCurrent;
+        if(deadmanul < theCurrent->manul)
+        {
+            aleftmanul = 1;
+            theCurrent = theCurrent->leftmanul;
+        }
+        else
+        {
+            aleftmanul = 0;
+            theCurrent = theCurrent->rightmanul;
+        }
+
+        if(theCurrent == NULL)
+        {
+            return ;
+        }
+    }
+    if(theCurrent->leftmanul == NULL && theCurrent->rightmanul == NULL)
+    {
+        if(aTree->root == theCurrent)
+        {
+            aTree->root = 0;
+        }
+        else if (aleftmanul)
+        {
+            theParent->leftmanul = NULL;
+        }
+        else
+        {
+            theParent->rightmanul = NULL;
+        }
+    }
+    else if(theCurrent->rightmanul == NULL)
+    {
+        if(aTree->root == theCurrent)
+        {
+            aTree->root = theCurrent->leftmanul;
+        }
+        else if(aleftmanul)
+        {
+            theParent->leftmanul = theCurrent->rightmanul;
+        }
+        else
+        {
+            theParent->rightmanul = theCurrent->rightmanul;
+        }
+    }
+    else
+    {
+        NodeMnl manulkiller = whokiller(aTree, theCurrent);
+        if(aTree->root == manulkiller)
+        {
+            aTree->root = NULL;
+        }
+        else if(aleftmanul)
+        {
+            theParent->leftmanul = manulkiller;
+        }
+        else
+        {
+            theParent->rightmanul = manulkiller;
+        }
+    }
+
+    freenode(theCurrent);
+
+}
+
+void deleteTree(TreeMnl aTree){
+    if(aTree != NULL)
+    {
+        freenode(aTree->root);
+        free(aTree);
+    }
+
+}

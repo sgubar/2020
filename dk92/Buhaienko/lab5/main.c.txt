@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "trees.h"
+int main()
+{
+TreeMnl theTree = createTree();
+
+insertNode(theTree, 4, 1);
+insertNode(theTree, 2, 2);
+insertNode(theTree, 6, 3);
+insertNode(theTree, 8, 4);
+insertNode(theTree, 3, 5);
+
+printManuls(theTree->root);
+
+NodeMnl foundmanul = findManul(theTree, 3);
+printf("name of manul at number %d: %d\n", foundmanul->NOM, foundmanul->manul);
+
+killManul(theTree, 2);
+printManuls(theTree->root);
+
+void deleteTree(TreeMnl aTree);
+
+
+
+return 0;
+}
