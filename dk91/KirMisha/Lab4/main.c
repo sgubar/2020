@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "fun.c"
+#include "fun.h"
 
 int main(int argc, const char * argv[]) {
     Node* list = NULL;
