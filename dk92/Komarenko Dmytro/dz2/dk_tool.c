@@ -10,11 +10,11 @@ Ellipse *createEllipse(Point *Centre, int *R, int *r)
 
 	if (NULL != Centre && NULL != R && NULL !=r)
 	{
-	    // выделение памяти под корень списка
+	  
 		theResult = (Ellipse *)malloc(sizeof(Ellipse));
 		if (NULL != theResult)
 		{
-		    // Присваивание значения узлу
+
 			theResult->O = copyPointWithPoint(Centre);
 			theResult->R = *R;
 			theResult->r = *r;
@@ -29,7 +29,7 @@ void destroyEllipse(Ellipse *aEllipse)
 	if (NULL != aEllipse)
 	{
         free(aEllipse->O);
-		free(aEllipse); // освобождаем память удаляемого узла
+		free(aEllipse); 
 
 	}
 }
@@ -62,8 +62,7 @@ Point *copyPointWithPoint(Point *aPoint)
 	Point *theResult = (Point *)malloc(sizeof(Point));
 	if (NULL != theResult)
 	{
-	    // Присваивание указателю theResult->x значения указателя aPoint -> х
-        // (созданный новый узел)
+	  
 		theResult->x = aPoint->x;
 		theResult->y = aPoint->y;
 	}
