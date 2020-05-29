@@ -29,6 +29,5 @@ CharNode *SLNodeAtIndex(const CharList *aList, int anIndex);
 void SLSwapNodesByIndex(CharList *aList, int theLeft, int theRight);
 void quickSort(CharList *aList, int aLeftIndex, int aRightIndex);
 int partitionIt(CharList *aList, int aLeftIndex, int aRightIndex, int aPivot);
-void doPrintSLList(const CharList *aList);
 
 #endif

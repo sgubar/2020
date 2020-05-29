@@ -3,10 +3,9 @@
 #include "list.h"
 #include "node.h"
 
-void doTestSLList();
 void doPrintSLList(const CharList *aList);
 
-int main()
+int main(int argc, const char * argv[])
 {
 
     CharList *theList = SLCreateList();
@@ -33,13 +32,27 @@ int main()
     printf("\nList was sorted\n\n");
     doPrintSLList(theList);
 
-    printf("\nNode of maximum length:\n");
-    doPrintSLList(theList);
-
     SLFreeList(theList);
 
     printf("\nList was deleted!\n");
 
 	return 0;
+}
+
+void doPrintSLList(const CharList *aList)
+{
+    printf("size: %d\n", SLCountList(aList));
+    for (int i = 0; i < SLCountList(aList); i++)
+    {
+        CharNode *theNode = SLNodeAtIndex(aList, i);
+        if (NULL != theNode)
+        {
+            printf("node[%d].size = %d word: %s", i, theNode->size, theNode->words);
+            /*for(int j = 0; j < theNode->size; j++){
+                printf("%s", theNode->words[j]);
+            }*/
+            printf("\n");
+        }
+    }
 }
 

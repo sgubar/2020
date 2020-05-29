@@ -173,18 +173,4 @@ void quickSort(CharList *aList, int aLeftIndex, int aRightIndex)
     quickSort(aList, thePartitionIndex + 1, aRightIndex);
 }
 
-void doPrintSLList(const CharList *aList)
-{
-    for (int i = 0; i < SLCountList(aList); i++)
-    {
-        CharNode *theNode = SLNodeAtIndex(aList, i);
-        if (NULL != theNode)
-        {
-            printf("node[%d]. size = %d words: ", i, theNode->size);
-            for(int j = 0; j < theNode->size; j++){
-                printf("%c", theNode->words[j]);
-            }
-            printf("\n");
-        }
-    }
-}
+

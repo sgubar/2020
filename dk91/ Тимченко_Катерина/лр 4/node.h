@@ -9,7 +9,7 @@ typedef struct __CharNode CharNode;
 typedef struct __CharNode
 {
     int size;
-    char *words[7];
+    char *words;
 	CharNode *nextNode;
 };
 
