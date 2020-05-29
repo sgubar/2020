@@ -8,7 +8,7 @@ typedef struct __Node
     float value;
     struct Node *leftChild;
     struct Node *rightChild;
-}Node;
+} Node;
 
 typedef struct __Tree
 {
@@ -17,15 +17,11 @@ typedef struct __Tree
 } Tree;
 
 Tree *CreateTree();
-
 void DeleteTree(Tree *myTree);
-
 void PrintTree(Tree *myTree);
-
 void AddNode(Tree *myTree, float value);
 
 void DeleteNode(Tree *myTree, float value);
-
 Node *FindNode(Tree *myTree, float value);
 
 #endif // TREE_H_INCLUDED

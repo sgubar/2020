@@ -1,10 +1,9 @@
 #include "tree.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <strings.h>
 
 Node *getSuccessor(Tree *myTree, Node *nodeToDel);
-
 void inorder(Node *myNode);
 
 Tree *CreateTree()
@@ -27,6 +26,8 @@ void AddNode(Tree *myTree, float value)
 {
     Node *myNode = (Node *)malloc(sizeof(Node));
     myNode->value = value;
+    myNode->rightChild = NULL;
+    myNode->leftChild = NULL;
     if(myTree->root == NULL)
     {
         myTree->root = myNode;
@@ -79,7 +80,14 @@ Node *FindNode(Tree *myTree, float value)
                 {
                     myNode = myNode->leftChild;
                 }
-                else if(myNode->rightChild != NULL)
+                else
+                {
+                    printf("\nThere is no such node in this tree\n");
+                }
+            }
+            else
+            {
+                if(myNode->rightChild != NULL)
                 {
                     myNode = myNode->rightChild;
                 }
@@ -87,6 +95,7 @@ Node *FindNode(Tree *myTree, float value)
                 {
                     printf("\nThere is no such node in this tree\n");
                 }
+            }
         }
         return myNode;
     }
@@ -100,7 +109,7 @@ void DeleteNode(Tree *myTree, float value)
 
 	int isLeftChild = 1;
 
-	while (value = child->value)
+	while (value != child->value)
 	{
 		parent = child;
 		if (value < child->value)
@@ -116,7 +125,7 @@ void DeleteNode(Tree *myTree, float value)
 
 		if (NULL == child)
 		{
-			return 0;
+			break;
 		}
 	}
 
@@ -182,7 +191,6 @@ void DeleteNode(Tree *myTree, float value)
 		}
 
 	}
-
 	free(child);
 }
 
@@ -209,6 +217,11 @@ Node *getSuccessor(Tree *myTree, Node *nodeToDel)
 
 void PrintTree(Tree *myTree)
 {
+    if(myTree->root == NULL)
+    {
+        printf("\nThe tree is empty\n");
+        return;
+    }
     Node *myNode = myTree->root;
     inorder(myNode);
 }
@@ -219,6 +232,6 @@ void inorder(Node *myNode)
         return;
     inorder(myNode->leftChild);
     if(myNode->value)
-        printf("%f", myNode->value);
+        printf("%.2f\n", myNode->value);
     inorder(myNode->rightChild);
 }
