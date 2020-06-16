@@ -34,16 +34,5 @@ int main()
     mnoz(matrix, a, b, chislo);
 }
 
-int mnoz(int matrix2[3][3], int i2, int j2, int chislo2)
-{
-    for(int i=0; i < i2; i++)
-    {
-        for(int j = 0; j < j2; j++)
-        {
-            matrix2[i][j]*= chislo2;
-            printf("%d\t", matrix2[i][j]);
-        } printf("\n");
-    }
 
 
-}
